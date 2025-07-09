@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Fly Compay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --secondary: #00c3ff;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --success: #28a745;
+        }
+        
+        .social-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.social-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 30px;
+}
+
+.social-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.social-card p {
+    margin-bottom: 20px;
+    color: #666;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            height: 400px;
+        }
+        
+        .hero-image img {
+            position: absolute;
+            max-width: 100%;
+            height: auto;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Specifications */
+        .specs {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+        
+        .specs-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .specs-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .specs-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .specs-list {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .spec-item {
+            margin-bottom: 25px;
+        }
+        
+        .spec-item h3 {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .spec-item h3 i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 250px;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+        
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .pricing-card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .testimonial-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .testimonial-info p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .testimonial-rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+            font-size: 18px;
+            padding: 15px 40px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .price {
+                font-size: 36px;
+            }
+            
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="C:\Users\alanc\OneDrive\Escritorio\Desarrollo de negocios\pag\logo2.png" class="logo">
+                    <i class="fas fa-paper-plane"></i>
+                    Sky Fly
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#features">Características</a></li>
+                    <li><a href="#specs">Especificaciones</a></li>
+                    <li><a href="#pricing">Conocenos</a></li>
+                    <li><a href="#testimonials">Visitanos</a></li>
+                </ul>
+                <a href="#pricing" class="btn">Comprar ahora</a>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Disfruta de una piel más fresca y relajada con SkinFly</h1>
+                    <p>El masajeador facial automático que cuida tu rostro con tecnología inteligente, vibración suave y hasta 40 minutos de uso por carga</p>
+                    <div class="hero-btns">
+                        <a href="#pricing" class="btn">Comprar ahora</a>
+                        <a href="#features" class="btn btn-outline">Más información</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="C:\Users\alanc\OneDrive\Escritorio\Desarrollo de negocios\pag\modelo3d.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Características innovadoras</h2>
+                <p>Descubre todo lo que hace de Sky Fly</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Masaje con microvibración</h3>
+                    <p>Relaja los músculos faciales y estimula la circulación con suaves vibraciones que ayudan a reducir la tensión y el estrés diario</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Hasta 40 minutos de uso</h3>
+                    <p>Batería recargable de larga duración para que disfrutes de tus rutinas de cuidado sin interrupciones.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Modos inteligentes de masaje</h3>
+                    <p>Elige entre distintos niveles de intensidad y programas automáticos según tus necesidades: relajación, tonificación o limpieza profunda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Diseño ergonómico</h3>
+                    <p>Ligero, cómodo de usar y con cabezales suaves que se adaptan a las curvas del rostro para un masaje uniforme.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h3>Calor suave</h3>
+                    <p>Función de calor opcional que abre los poros, mejora la absorción de cremas y deja la piel con una sensación más fresca y revitalizada</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguridad garantizada</h3>
+                    <p>Materiales hipoalergénicos y resistente al agua para un uso seguro en todo momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="specs" id="specs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Especificaciones técnicas</h2>
+                <p>Conoce los detalles que hacen de Sky Fly una maravilla tecnológica</p>
+            </div>
+            <div class="specs-container">
+                <div class="specs-image">
+                    <img src="C:\Users\alanc\OneDrive\Escritorio\Desarrollo de negocios\pag\modelo2.png">
+                </div>
+                <div class="specs-list">
+                    <div class="spec-item">
+                        <h3><i class="fas fa-weight"></i> Peso</h3>
+                        <p>Solo 200g, ligero y fácil de manejar, ideal para usar todos los días sin esfuerzo</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3><i class="fas fa-ruler-combined"></i> Dimensiones</h3>
+                        <p>Compacto y portátil: cabe en cualquier bolso o cajón. Perfecto para usar en casa o llevar de viaje.</p>
+                    </div>
+
+                    <div class="spec-item">
+                        <h3><i class="fas fa-battery-full"></i> Batería</h3>
+                        <p>Incluye una batería recargable de larga duración (1500mAh) con sistema inteligente que optimiza el consumo de energía</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3><i class="fas fa-wifi"></i> Conectividad</h3>
+                        <p>Compatible con app móvil a través de Bluetooth. Funciona con teléfonos iOS y Android para controlar funciones y modos desde tu celular</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3><i class="fas fa-wind"></i> Resistente al uso diario</h3>
+                        <p>Diseñado para durar, con materiales de alta calidad y resistencia al agua para usarlo con cremas o en el baño</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3><i class="fas fa-temperature-low"></i> Rango de temperatura</h3>
+                        <p>Funciona sin problemas en ambientes fríos o calientes (de 0°C a 40°C), ideal para cualquier clima o estación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galería de imágenes</h2>
+                <p>Capturas reales tomadas con Sky Fly por nuestros usuarios</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="C:\Users\alanc\OneDrive\Escritorio\Desarrollo de negocios\pag\1.jpeg">
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\alanc\OneDrive\Escritorio\Desarrollo de negocios\pag\2.jpeg">
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\alanc\OneDrive\Escritorio\Desarrollo de negocios\pag\3.jpeg">
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\alanc\OneDrive\Escritorio\Desarrollo de negocios\pag\4.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Conócenos</h2>
+<p>Síguenos en nuestras redes sociales</p>
+</div>
+<div class="social-cards">
+    <div class="social-card">
+        <div class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </div>
+        <h3>Facebook</h3>
+        <p>Únete a nuestra comunidad en Facebook para noticias y actualizaciones</p>
+        <a href="https://facebook.com/tupagina" target="_blank" class="btn">Seguir</a>
+    </div>
+    <div class="social-card popular">
+        <div class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </div>
+        <h3>Instagram</h3>
+        <p>Descubre increíbles fotos y videos de nuestros drones en acción</p>
+        <a href="https://www.instagram.com/skyfly_company?igsh=MWZpamc5amIxOWJudQ==" target="_blank" class="btn">Seguir</a>
+    </div>
+    <div class="social-card">
+        <div class="social-icon">
+            <i class="fab fa-tiktok"></i>
+        </div>
+        <h3>TikTok</h3>
+        <p>Disfruta de contenido divertido y creativo con nuestros drones</p>
+        <a href="https://www.tiktok.com/@skyfly_company?is_from_webapp=1&sender_device=pc" target="_blank" class="btn">Seguir</a>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Testimonials & Location -->
+<section class="testimonials-map" id="testimonials">
+    <div class="container">
+        
+        <div class="testimonials-container">
+            <!-- Columna de Testimonios -->
+            <div class="testimonials-column">
+                <div class="testimonial-grid">
+                </div>
+            </div>
+            
+            <!-- Columna del Mapa -->
+            <div class="map-column">
+                <div class="location-card">
+                    <h3>Visítanos</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.304820568103!2d-99.5710858759581!3d19.384156039295256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d274ebbba9a9b9%3A0x7646963d8f62835e!2sEje%202%20Nte.%20205-109%2C%2050233%20Parque%20Industrial%20Toluca%202000%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1752081342950!5m2!1ses!2smx"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="location-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Eje 2 Nte. 205-109</p>
+                        <p>50233 Parque Industrial Toluca 2000, Méx.</p>
+                        <p><i class="fas fa-phone"></i> +52 7228823113</p>
+                        <p><i class="fas fa-envelope"></i> contacto@skyfly.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Sky Fly</h3>
+                    <p>Líderes en tecnología de drones, comprometidos con la innovación y calidad para ofrecerte la mejor experiencia de vuelo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li><a href="#">Sky Fly Basic</a></li>
+                        <li><a href="#">Sky Fly Advanced</a></li>
+                        <li><a href="#">Sky Fly Pro</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Baterías</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Soporte</h3>
+                    <ul>
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">Manuales</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Garantía</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Política de devoluciones</a></li>
+                        <li><a href="#">Regulaciones de drones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sky Fly. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
